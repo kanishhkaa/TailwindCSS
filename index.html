@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Services</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap" rel="stylesheet">
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+    <style>
+        /* Custom diagonal background */
+        .custom-background {
+            background: linear-gradient(135deg, #3b1972 50%, #fff 50%);
+        }
+
+        .icon-container {
+            position: relative;
+            overflow: hidden;
+            /* Position relative for absolute children */
+        }
+
+        .purple-circle {
+            background-color: #6a5acd;
+            height: 80px;
+            width: 80px;
+            border-radius: 50%;
+            z-index: 0;
+        }
+
+        .white-circle {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            height: 70px;
+            width: 70px;
+            object-fit: cover;
+            transform: translate(-50%, -50%);
+            background-color: white;
+            border-radius: 50%;
+            padding: 5px;
+            z-index: 1;
+        }
+
+        .white-circle img {
+            width: 100%;
+            /* Set width to 50% of the white circle */
+            height: 100%;
+            /* Set height to 50% of the white circle */
+            object-fit: contain;
+            /* Ensure the image maintains its aspect ratio */
+            border-radius: 50%;
+            /* Keep the circular shape */
+        }
+
+
+        /* Adjusted box height */
+        .service-card {
+            height: 100%;
+            /* Make sure the card takes full height */
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            overflow: hidden;
+            /* Prevents content from flowing out */
+            transition: transform 0.6s;
+        }
+
+        .service-card:hover {
+            transform: scale(1.05);
+            /* Smooth scale on hover */
+        }
+
+        .rotate {
+            animation: rotate 0.6s linear forwards;
+        }
+
+        @keyframes rotate {
+            from {
+                transform: rotate(0deg);
+            }
+
+            to {
+                transform: rotate(360deg);
+            }
+        }
+
+        /* Style for consistent text and button containment */
+        .service-card p {
+            margin-bottom: auto;
+            /* Pushes the button to the bottom of the card */
+        }
+
+        .button-container {
+            padding-top: 20px;
+        }
+
+        h1 {
+            font-family: 'Roboto', sans-serif;
+            /* Set professional font */
+            font-size: 5xl;
+            /* Increase the size for a larger heading */
+            font-weight: 500;
+            /* Make it a bit bold but not too heavy */
+        }
+    </style>
+</head>
+
+<body class="bg-gray-100">
+
+    <!-- Services Section -->
+    <section class="py-16 relative custom-background">
+        <div class="text-left text-white mb-12">
+            <h1 class="text-4xl font-bold">Our Services</h1>
+        </div>
+
+        <!-- Services Container -->
+        <div class="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+
+            <!-- Card 1: Emergency Plumbing Services -->
+            <div class="bg-white p-8 rounded-lg shadow-lg text-center service-card" onmouseover="rotateCard(this)">
+                <div class="flex justify-center mb-4 icon-container">
+                    <div class="purple-circle rounded-full p-3">
+                        <img src="emergency-icon.png" alt="Emergency Plumbing Icon" class="w-12 h-12">
+                    </div>
+                    <div class="white-circle">
+                        <img src="emergency-icon.png" alt="Emergency Plumbing Icon" class="w-8 h-8 mx-auto">
+                    </div>
+                </div>
+                <h3 class="text-xl font-bold mb-4 text-gray-800">Emergency Plumbing Services</h3>
+                <p class="text-gray-600">Our plumbers are ready to go 24/7 for emergencies – including nights, weekends,
+                    and holidays.</p>
+                <div class="button-container">
+                    <a href="#"
+                        class="text-purple-800 font-semibold border-2 border-purple-800 py-2 px-4 rounded hover:bg-purple-800 hover:text-white">Explore
+                        this Service</a>
+                </div>
+            </div>
+
+            <!-- Card 2: Plumbing and Drains -->
+            <div class="bg-white p-8 rounded-lg shadow-lg text-center service-card" onmouseover="rotateCard(this)">
+                <div class="flex justify-center mb-4 icon-container">
+                    <div class="purple-circle rounded-full p-3">
+                        <i class="fas fa-wrench text-white text-4xl"></i>
+                    </div>
+                    <div class="white-circle">
+                        <img src="drainage.png" alt="Drainage Icon">
+                    </div>
+                </div>
+                <h3 class="text-xl font-bold mb-4 text-gray-800">Plumbing and Drains</h3>
+                <p class="text-gray-600">As the largest plumbing and drain service company, we make thousands of repairs
+                    every day.</p>
+                <div class="button-container">
+                    <a href="#"
+                        class="text-purple-800 font-semibold border-2 border-purple-800 py-2 px-4 rounded hover:bg-purple-800 hover:text-white">Explore
+                        this Service</a>
+                </div>
+            </div>
+
+            <!-- Card 3: Water Damage -->
+            <div class="bg-white p-8 rounded-lg shadow-lg text-center service-card" onmouseover="rotateCard(this)">
+                <div class="flex justify-center mb-4 icon-container">
+                    <div class="purple-circle rounded-full p-3">
+                    </div>
+                    <div class="white-circle">
+                        <img src="water-damage-icon.png" alt="Water Damage Icon">
+                    </div>
+                </div>
+                <h3 class="text-xl font-bold mb-4 text-gray-800">Water Damage</h3>
+                <p class="text-gray-600">Our teams are equipped with state-of-the-art water extraction and cleanup
+                    equipment.</p>
+                <div class="button-container">
+                    <a href="#"
+                        class="text-purple-800 font-semibold border-2 border-purple-800 py-2 px-4 rounded hover:bg-purple-800 hover:text-white">Explore
+                        this Service</a>
+                </div>
+            </div>
+
+            <!-- Card 4: Water Heaters -->
+            <div class="bg-white p-8 rounded-lg shadow-lg text-center service-card" onmouseover="rotateCard(this)">
+                <div class="flex justify-center mb-4 icon-container">
+                    <div class="purple-circle rounded-full p-3">
+                        <img src="water-heater-icon.png" alt="Water Heaters Icon" class="w-12 h-12">
+                    </div>
+                    <div class="white-circle">
+                        <img src="water-heater-icon.png" alt="Water Heaters Icon" class="w-8 h-8 mx-auto">
+                    </div>
+                </div>
+                <h3 class="text-xl font-bold mb-4 text-gray-800">Water Heaters</h3>
+                <p class="text-gray-600">Trust Roto-Rooter for repair and replacement of gas, electric, and tankless
+                    water heaters.</p>
+                <div class="button-container">
+                    <a href="#"
+                        class="text-purple-800 font-semibold border-2 border-purple-800 py-2 px-4 rounded hover:bg-purple-800 hover:text-white">Explore
+                        this Service</a>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <script>
+        function rotateCard(card) {
+            card.classList.add('rotate');
+            setTimeout(() => {
+                card.classList.remove('rotate'); // Remove the rotate class after animation completes
+            }, 600); // Match the duration of the animation
+        }
+    </script>
+</body>
+
+</html>
